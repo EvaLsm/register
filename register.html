@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单操作</title>
+    <style>
+        body
+        {
+            background: url("image/background4.jpg") no-repeat;
+            background-size: cover;
+        }
+        .z {
+            border-radius:13px;
+            border-style: ridge;
+            border-width: 2px;
+            border-color: rgb(58, 222, 222);
+            width: 400px;
+            margin-left: auto;
+            margin-bottom: 25px;
+            margin-top: 10%;
+            margin-right: auto;
+            text-align: right;
+            height: 418px;
+           /* background-images: url('background3.png');*/
+            background-color: powderblue;
+           /*opacity:1;*/
+            background: linear-gradient(to top, rgba(64,208,255,0.1), rgba(64,208,255,0.6));
+        }
+
+        input {
+            width: 150px;
+           /* background-color: #b0e0e6;*/
+            margin-top: 7%;
+        }
+
+        .z input {
+            margin-right: 70px;
+
+        }
+
+        .a {
+            width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .put{
+            background-color: #b0e0e6;
+        }
+
+        #btn1 {
+            margin: 12px;
+        }
+
+        #btn2 {
+            margin: 12px;
+        }
+    </style>
+
+</head>
+<body>
+<form action="http://192.168.0.109:8080/WebService51pg/user/userRegister" methon="get">
+
+        <div class="z">
+            <label for="user">用户名：</label>
+            <input type="text" id="user"required name="userNo">
+            <br>
+            <label for="pw">密码：</label>
+            <input name="userPwd" type="password" id="pw" required >
+            <br>
+            <label for="pw1">确认密码：</label>
+            <input type="password"name="password" id="pw1"required>
+            <br>
+            <label for="name">真实姓名：</label>
+            <input type="text" id="name"maxlength="4"name="Name">
+            <br>
+            <label for="sex">性别：</label>
+            <input list="sex1" type="text" id="sex"name="sex">
+            <datalist id="sex1">
+                <option value="男">
+                <option value="女">
+            </datalist>
+            <br>
+            <label for="email">Email：</label>
+            <input type="email" name="email" id="email"required>
+            <br>
+            <label for="question">密码遗失提示问题：</label>
+            <input list="question1"type="text"name="question" id="question"required>
+            <datalist id="question1">
+                <option value="我父亲的名字。">
+                <option value="我母亲的名字。">
+                <option value="我的初中老师是谁？">
+                <option value="我配偶的名字。">
+                <option value="我的学号是多少？">
+                <option value="我最喜欢吃什么？">
+                <option value="我的大学校名是？">
+            </datalist>
+            <br>
+            <label for="answer ">密码提示问题答案：</label>
+            <input type="text" name="answer" id="answer "required>
+            <br>
+        </div>
+
+    <div class="a">
+        <input class="put" type="submit" value="注册" id="btn1" onclick="equality()">
+        <input class="put" type="reset" value="重写" id="btn2">
+    </div>
+    <script type="text/javascript">
+        function equality() {
+           var pw = document.getElementById("pw");
+            var pw1 = document.getElementById("pw1");
+            if(pw.value!=pw1.value){
+                alert("两次输入的密码不相同，请重新输入。")
+                return false;
+            }
+
+        }
+    </script>
+
+</form>
+</body>
+</html>
